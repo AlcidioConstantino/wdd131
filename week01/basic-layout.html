@@ -1,40 +1,56 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WDD 131 HTML and CSS layout review by Alcidio Massanganhe">
+    <meta name="author" content="Alcidio Massanganhe">
     <title>Alcidio Massanganhe - WDD 131</title>
     <link rel="stylesheet" href="styles/layout.css">
 </head>
+
 <body>
     <header>
         <div class="header-content">
-            <p>Conteúdo do cabeçalho</p>
+            <p>Alcidio Massanganhe - WDD 131: Dynamic Web Fundamentals</p>
         </div>
 
-        <nav>
-            <ul class="navigation">
-                <li><a href="#" title="Home">Home</a></li>
-                <li><a href="#" title="About Us">About</a></li>
-                <li><a href="#" title="Our Partners">Affiliates</a></li>
-                <li><a href="#" title="History of Our Organization">History</a></li>
-                <li><a href="#" title="Contact Us">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+```
+    <nav>
+        <ul class="navigation">
+            <li><a href="#" title="Home">Home</a></li>
+            <li><a href="#" title="About Us">About</a></li>
+            <li><a href="#" title="Our Partners">Affiliates</a></li>
+            <li><a href="#" title="History of Our Organization">History</a></li>
+            <li><a href="#" title="Contact Us">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <main>
-        <section>
-            <p>Conteúdo principal</p>
-        </section>
+<main>
+    <section>
+         <p>Main Content</p>
+    </section>
 
-        <aside>
-            <p>Conteúdo lateral</p>
-        </aside>
-    </main>
+    <aside>
+         <p>Side Content</p>
+    </aside>
+</main>
 
-    <footer>
-        <p>Conteúdo do rodapé</p>
-    </footer>
+<footer>
+    <p>&copy; <span id="currentyear"></span> Alcidio Massanganhe</p>
+    <p id="lastModified"></p>
+</footer>
+
+<script src="scripts/getdates.js"></script>
+```
+
 </body>
 </html>
+<footer>
+    <p>&copy; <span id="currentyear"></span> Alcidio Massanganhe</p>
+    <p id="lastModified"></p>
+</footer>
+
+<script src="js/getdates.js"></script>
