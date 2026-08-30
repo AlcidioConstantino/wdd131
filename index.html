@@ -10,12 +10,15 @@
 
     <title>WDD 131: Dynamic Web Fundamentals - Alcidio Massanganhe</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles/base.css">
 
     <script src="scripts/getdates.js" defer></script>
 </head>
-<body>
-```html
+
 <body>
 
     <header>
@@ -29,29 +32,34 @@
             <a href="#">Contact</a>
         </nav>
     </header>
-```html
-<main>
-    <h1>Alcidio Massanganhe</h1>
 
-    <section class="card">
-        <h2>About Me</h2>
+    <main>
+        <h1>Alcidio Massanganhe</h1>
+
+        <section class="card">
+            <h2>About Me</h2>
+            <p>
+                My name is Alcidio Massanganhe. I am a student of WDD 131:
+                Dynamic Web Fundamentals. I am learning how to create websites
+                using HTML, CSS, and JavaScript.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>Web Development</h2>
+            <p>
+                This page is part of my web development studies. I am developing
+                my skills in HTML, CSS, JavaScript, and responsive web design.
+            </p>
+        </section>
+    </main>
+
+    <footer>
         <p>
-            My name is Alcidio Massanganhe. I am a student of WDD 131:
-            Dynamic Web Fundamentals. I am learning how to create websites
-            using HTML, CSS, and JavaScript.
+            © <span id="currentyear"></span> Alcidio Massanganhe
         </p>
-    </section>
-
-    <section class="card">
-        <h2>Web Development</h2>
-        <p>
-            This page is part of my web development studies. I am developing
-            my skills in HTML, CSS, JavaScript, and responsive web design.
-        </p>
-    </section>
-</main>
-
-</body>
+        <p id="lastModified"></p>
+    </footer>
 
 </body>
 </html>
