@@ -1,0 +1,169 @@
+/* ==============================
+   WDD 131 - Temple Album
+   Mobile First CSS
+   ============================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    color: #222;
+    background-color: #f5f7fa;
+}
+
+/* ==============================
+   Header
+   ============================== */
+
+header {
+    background-color: #17324d;
+    color: white;
+}
+
+.header-content {
+    position: relative;
+    padding: 1rem;
+}
+
+header h1 {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.7rem;
+}
+
+/* ==============================
+   Hamburger Button
+   ============================== */
+
+#menu-button {
+    position: absolute;
+    top: 0.8rem;
+    right: 1rem;
+
+    border: none;
+    background: transparent;
+    color: white;
+
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* ==============================
+   Navigation
+   ============================== */
+
+nav {
+    display: none;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+nav.open {
+    display: flex;
+}
+
+nav a {
+    padding: 0.8rem;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #315b7d;
+}
+
+nav a.active {
+    background-color: #ffffff;
+    color: #17324d;
+    font-weight: 700;
+}
+
+/* ==============================
+   Main
+   ============================== */
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+}
+
+main h2 {
+    margin-bottom: 1.5rem;
+
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    color: #17324d;
+}
+
+/* ==============================
+   Temple Grid
+   ============================== */
+
+.temple-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+/* ==============================
+   Figures
+   ============================== */
+
+figure {
+    margin: 0;
+    background-color: white;
+    border: 1px solid #d8dee5;
+    border-radius: 8px;
+    overflow: hidden;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+figure img {
+    display: block;
+
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+}
+
+figcaption {
+    padding: 1rem;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    text-align: center;
+
+    color: #17324d;
+}
+
+/* ==============================
+   Footer
+   ============================== */
+
+footer {
+    margin-top: 2rem;
+    padding: 1.5rem;
+
+    background-color: #17324d;
+    color: white;
+
+    text-align: center;
+}
+
+footer p {
+    margin: 0.5rem;
+}
+
+#lastModified {
+    font-size: 0.9rem;
+}

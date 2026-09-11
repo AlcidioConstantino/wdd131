@@ -1,0 +1,65 @@
+/* ==============================
+   WDD 131 - Temple Album
+   Large Screen CSS
+   ============================== */
+
+@media screen and (min-width: 700px) {
+
+    /* Header */
+
+    .header-content {
+        max-width: 1100px;
+        margin: 0 auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    /* Hide hamburger */
+
+    #menu-button {
+        display: none;
+    }
+
+    /* Navigation */
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        margin-top: 0;
+    }
+
+    nav a {
+        border-top: none;
+        padding: 0.8rem 1rem;
+    }
+
+    /* Main */
+
+    main {
+        max-width: 1100px;
+        padding: 2rem;
+    }
+
+    main h2 {
+        font-size: 2rem;
+    }
+
+    /* Temple Grid */
+
+    .temple-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    /* Images */
+
+    figure img {
+        height: 200px;
+    }
+}
