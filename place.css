@@ -1,0 +1,154 @@
+:root {
+    --green: #007749;
+    --red: #d21034;
+    --yellow: #fce100;
+    --black: #111111;
+    --surface: rgba(255, 255, 255, 0.94);
+    --ink: #172019;
+    --shadow: 0 3px 13px rgba(0, 0, 0, 0.25);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f7f2;
+}
+
+header,
+footer {
+    background: var(--green);
+    color: white;
+    text-align: center;
+}
+
+header {
+    border-bottom: 12px solid var(--red);
+    padding: 1.1rem 1rem;
+}
+
+h1,
+h2,
+p {
+    margin: 0;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+main {
+    position: relative;
+}
+
+.hero,
+.hero img {
+    display: block;
+    width: 100%;
+}
+
+.hero img {
+    height: auto;
+    object-fit: cover;
+}
+
+.card {
+    padding: 1.25rem;
+}
+
+.card h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1.45rem;
+}
+
+dl {
+    margin: 0;
+}
+
+dl div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem;
+    margin: 0.42rem 0;
+}
+
+dt {
+    font-weight: 700;
+    text-align: right;
+}
+
+dd {
+    margin: 0;
+}
+
+.weather {
+    border-top: 1px solid #d7d7d7;
+}
+
+.weather > img {
+    display: block;
+    margin: -0.4rem auto 0.7rem;
+}
+
+footer {
+    border-top: 7px solid var(--yellow);
+    padding: 1rem;
+    line-height: 1.6;
+}
+
+@media (min-width: 700px) {
+    body {
+        background: white;
+    }
+
+    header {
+        padding: 1.3rem 1rem;
+    }
+
+    .hero img {
+        min-height: 600px;
+    }
+
+    .card {
+        position: absolute;
+        width: min(355px, 31vw);
+        background: var(--surface);
+        box-shadow: var(--shadow);
+        padding: 0 1.15rem 1.1rem;
+    }
+
+    .card h2 {
+        position: relative;
+        left: -2.3rem;
+        width: calc(100% + 2.3rem);
+        margin: 1rem 0;
+        padding: 0.65rem 1rem;
+        color: white;
+        text-align: left;
+        background: var(--green);
+    }
+
+    .data {
+        top: 2.5rem;
+        left: 3.5%;
+    }
+
+    .weather {
+        right: 3.5%;
+        bottom: 2.5rem;
+        border: 0;
+    }
+
+    .weather h2::after {
+        content: " ⛅";
+    }
+
+    .weather > img {
+        display: none;
+    }
+}
