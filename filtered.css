@@ -1,0 +1,36 @@
+* { box-sizing: border-box; }
+body { margin: 0; color: #222; background: #f5f7fa; font-family: "Roboto", sans-serif; }
+header, footer { background: #17324d; color: #fff; }
+.header-content { position: relative; padding: 1rem; }
+header h1 { margin: 0; font: 700 1.7rem "Montserrat", sans-serif; }
+#menu-button { position: absolute; top: .7rem; right: 1rem; border: 0; background: transparent; color: inherit; font-size: 2rem; cursor: pointer; }
+nav { display: none; flex-direction: column; margin-top: 1rem; }
+nav.open { display: flex; }
+nav a { padding: .8rem; border-top: 1px solid #ffffff33; color: #fff; text-align: center; text-decoration: none; }
+nav a:hover, nav a:focus-visible { background: #315b7d; }
+nav a.active { background: #fff; color: #17324d; font-weight: 700; }
+main { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1rem; }
+main h2 { margin: 0 0 1.5rem; color: #17324d; font: 700 1.6rem "Montserrat", sans-serif; text-align: center; }
+.temple-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+.temple-card { margin: 0; overflow: hidden; border: 1px solid #d8dee5; border-radius: 8px; background: #fff; box-shadow: 0 2px 6px #00000014; }
+.temple-card img { display: block; width: 100%; height: 220px; object-fit: cover; }
+.temple-card figcaption { padding: 1rem; }
+.temple-card h3 { margin: 0 0 .75rem; color: #17324d; font: 700 1.1rem "Montserrat", sans-serif; text-align: center; }
+.temple-card dl { margin: 0; }
+.temple-card dl div { display: grid; grid-template-columns: 7rem 1fr; gap: .5rem; margin: .35rem 0; }
+.temple-card dt { font-weight: 700; }
+.temple-card dd { margin: 0; }
+footer { margin-top: 2rem; padding: 1rem; text-align: center; }
+footer p { margin: .5rem; }
+#lastModified { font-size: .9rem; }
+@media (min-width: 700px) {
+  .header-content { display: flex; max-width: 1100px; margin: 0 auto; align-items: center; justify-content: space-between; }
+  header h1 { font-size: 2rem; }
+  #menu-button { display: none; }
+  nav { display: flex; flex-direction: row; margin: 0; }
+  nav a { padding: .8rem 1rem; border: 0; }
+  main { padding: 2rem; }
+  main h2 { font-size: 2rem; }
+  .temple-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
+}
+@media (min-width: 1000px) { .temple-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }

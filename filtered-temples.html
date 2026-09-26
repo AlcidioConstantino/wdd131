@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple Album</title>
+    <meta name="description" content="A responsive photo album of temples of The Church of Jesus Christ of Latter-day Saints.">
+    <meta name="author" content="Alcidio Massanganhe">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="filtered.css">
+    <script src="scripts/filtered-temples.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Temple Album</h1>
+            <button id="menu-button" type="button" aria-label="Open navigation menu" aria-expanded="false">&#9776;</button>
+            <nav id="navigation" aria-label="Temple filters">
+                <a href="#" data-filter="all" class="active" aria-current="page">Home</a>
+                <a href="#" data-filter="old">Old</a>
+                <a href="#" data-filter="new">New</a>
+                <a href="#" data-filter="large">Large</a>
+                <a href="#" data-filter="small">Small</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h2 id="gallery-title">All Temples</h2>
+        <section class="temple-grid" id="temple-grid" aria-labelledby="gallery-title" aria-live="polite"></section>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentyear"></span> Alcidio Massanganhe | Mozambique</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
