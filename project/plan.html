@@ -1,0 +1,125 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Create a simple travel preference for exploring Mozambique.">
+
+    <meta name="author" content="Alcidio Massanganhe">
+
+    <title>Explore Mozambique | Plan Your Visit</title>
+
+    <link rel="stylesheet" href="styles/site.css">
+    <script src="scripts/site.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <a class="logo" href="index.html">Explore Mozambique</a>
+
+            <button id="menu-button" class="menu-button" aria-label="Open navigation">
+                ☰
+            </button>
+
+            <nav id="main-nav">
+                <a href="index.html">Home</a>
+                <a href="destinations.html">Destinations</a>
+                <a href="plan.html" class="active">Plan Your Visit</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-heading">
+            <p class="eyebrow">Plan</p>
+
+            <h1>Plan Your Visit</h1>
+
+            <p>
+                Tell us what kind of experience you would like
+                to have in Mozambique.
+            </p>
+        </section>
+
+        <section class="form-section section">
+            <form id="travel-form">
+                <label for="visitor-name">
+                    Your name
+                </label>
+
+                <input
+                    type="text"
+                    id="visitor-name"
+                    name="visitor-name"
+                    required
+                    autocomplete="name">
+
+                <label for="region">
+                    Preferred region
+                </label>
+
+                <select id="region" name="region" required>
+                    <option value="">Select a region</option>
+                    <option value="north">North</option>
+                    <option value="center">Center</option>
+                    <option value="south">South</option>
+                </select>
+
+                <fieldset>
+                    <legend>What interests you?</legend>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="interest"
+                            value="beaches"
+                            required>
+                        Beaches
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="interest"
+                            value="culture">
+                        Culture
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="interest"
+                            value="nature">
+                        Nature
+                    </label>
+                </fieldset>
+
+                <button class="button" type="submit">
+                    Save My Preferences
+                </button>
+            </form>
+
+            <div id="saved-preference" class="saved-preference">
+                <h2>Your saved preference</h2>
+
+                <p>
+                    Your travel preference will appear here.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            &copy; 2026 Explore Mozambique | Alcidio Massanganhe
+        </p>
+
+        <a href="references.html">References</a>
+    </footer>
+</body>
+</html>
+```

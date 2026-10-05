@@ -1,0 +1,378 @@
+```css
+/* ------------------------------
+   GENERAL STYLES
+--------------------------------*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #1d3557;
+    background-color: #f8f9fa;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: #1d3557;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+}
+
+.section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+}
+
+
+/* ------------------------------
+   HEADER
+--------------------------------*/
+
+header {
+    background-color: #1d3557;
+    color: white;
+}
+
+.header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 1.2rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+}
+
+nav a:hover,
+nav a.active {
+    color: #f4d35e;
+}
+
+.menu-button {
+    display: none;
+}
+
+
+/* ------------------------------
+   HERO
+--------------------------------*/
+
+.hero {
+    min-height: 70vh;
+
+    display: grid;
+    place-items: center;
+
+    text-align: center;
+
+    padding: 3rem 1.5rem;
+
+    background:
+        linear-gradient(
+            rgba(29, 53, 87, 0.65),
+            rgba(29, 53, 87, 0.65)
+        ),
+        url("../images/mozambique-coast.jpg")
+        center / cover;
+}
+
+.hero-content {
+    max-width: 700px;
+    color: white;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+
+/* ------------------------------
+   BUTTON
+--------------------------------*/
+
+.button {
+    display: inline-block;
+
+    margin-top: 1rem;
+    padding: 0.8rem 1.3rem;
+
+    border: none;
+    border-radius: 6px;
+
+    background-color: #f4d35e;
+    color: #1d3557;
+
+    font-weight: bold;
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+.button:hover {
+    opacity: 0.85;
+}
+
+
+/* ------------------------------
+   TEXT
+--------------------------------*/
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-weight: bold;
+}
+
+.intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.intro img {
+    border-radius: 10px;
+}
+
+
+/* ------------------------------
+   CARDS
+--------------------------------*/
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.destination-card img {
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+
+/* ------------------------------
+   PAGE HEADING
+--------------------------------*/
+
+.page-heading {
+    text-align: center;
+
+    padding: 4rem 1.5rem;
+
+    background-color: #e8f1f5;
+}
+
+.page-heading h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+
+/* ------------------------------
+   FILTER
+--------------------------------*/
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+select,
+input {
+    width: 100%;
+    padding: 0.75rem;
+
+    border: 1px solid #777;
+    border-radius: 5px;
+
+    font: inherit;
+}
+
+.filter-container select {
+    max-width: 250px;
+}
+
+.message {
+    font-weight: bold;
+}
+
+
+/* ------------------------------
+   FORM
+--------------------------------*/
+
+.form-section {
+    max-width: 800px;
+}
+
+form {
+    background-color: white;
+
+    padding: 2rem;
+
+    border-radius: 10px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+form input,
+form select {
+    margin-top: 0.4rem;
+}
+
+fieldset {
+    margin-top: 1.5rem;
+    border: 1px solid #ccc;
+    padding: 1rem;
+}
+
+fieldset label {
+    font-weight: normal;
+}
+
+.saved-preference {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #e8f1f5;
+    border-radius: 10px;
+}
+
+
+/* ------------------------------
+   REFERENCES
+--------------------------------*/
+
+.references {
+    min-height: 50vh;
+}
+
+.references li {
+    margin-bottom: 0.8rem;
+}
+
+
+/* ------------------------------
+   FOOTER
+--------------------------------*/
+
+footer {
+    background-color: #1d3557;
+    color: white;
+
+    text-align: center;
+
+    padding: 2rem 1rem;
+
+    margin-top: 3rem;
+}
+
+footer a {
+    color: #f4d35e;
+}
+
+
+/* ------------------------------
+   MOBILE
+--------------------------------*/
+
+@media screen and (max-width: 700px) {
+
+    .header-container {
+        flex-wrap: wrap;
+    }
+
+    .menu-button {
+        display: block;
+
+        background: none;
+        border: none;
+
+        color: white;
+        font-size: 1.8rem;
+
+        cursor: pointer;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    .intro {
+        grid-template-columns: 1fr;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-container select {
+        max-width: none;
+    }
+}
+```
