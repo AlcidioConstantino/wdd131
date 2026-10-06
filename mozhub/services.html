@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse a practical guide to home, vehicle, learning, and creative services in Mozambique.">
+    <meta name="author" content="Alcidio Massanganhe">
+    <title>Services | MozHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/site.css">
+    <script src="scripts/site.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header"><div class="header-inner">
+        <a class="brand" href="index.html" aria-label="MozHub home"><img src="images/mozhub-logo.png.png" alt="" width="140" height="140"><span>MozHub</span></a>
+        <button class="menu-button" id="menu-button" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation"><span aria-hidden="true">☰</span></button>
+        <nav id="main-nav" aria-label="Main navigation"><a href="index.html">Home</a><a class="active" aria-current="page" href="services.html">Services</a><a href="plan.html">Plan your service</a></nav>
+    </div></header>
+    <main id="main-content">
+        <section class="page-heading"><p class="eyebrow">Service guide</p><h1>Explore professional services</h1><p>Learn what different professionals can help with and what information to prepare when making an inquiry.</p></section>
+        <section class="section">
+            <div class="filter-container"><label for="service-filter">Filter by service type</label><select id="service-filter"><option value="all">All services</option><option value="home">Home and repairs</option><option value="transport">Transport</option><option value="learning">Learning</option><option value="creative">Creative and events</option></select></div>
+            <p class="message" id="service-message" aria-live="polite"></p>
+            <div class="card-grid service-grid" id="service-list"></div>
+        </section>
+        <section class="notice section"><h2>Before you hire</h2><ul><li>Explain the task and the location as clearly as you can.</li><li>Ask what is included in an estimate and whether materials cost extra.</li><li>Agree on timing, payment expectations, and how changes will be handled.</li><li>For regulated or safety-critical work, ask about relevant training and qualifications.</li></ul></section>
+    </main>
+    <footer class="site-footer"><p>© 2026 MozHub | Professional services in Mozambique</p><a href="references.html">References</a></footer>
+</body>
+</html>

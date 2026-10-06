@@ -1,125 +1,38 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-        content="Create a simple travel preference for exploring Mozambique.">
-
+    <meta name="description" content="Prepare a clear inquiry about a professional service in Mozambique with the MozHub request planner.">
     <meta name="author" content="Alcidio Massanganhe">
-
-    <title>Explore Mozambique | Plan Your Visit</title>
-
+    <title>Plan Your Service | MozHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/site.css">
     <script src="scripts/site.js" defer></script>
 </head>
-
 <body>
-    <header>
-        <div class="header-container">
-            <a class="logo" href="index.html">Explore Mozambique</a>
-
-            <button id="menu-button" class="menu-button" aria-label="Open navigation">
-                ☰
-            </button>
-
-            <nav id="main-nav">
-                <a href="index.html">Home</a>
-                <a href="destinations.html">Destinations</a>
-                <a href="plan.html" class="active">Plan Your Visit</a>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <section class="page-heading">
-            <p class="eyebrow">Plan</p>
-
-            <h1>Plan Your Visit</h1>
-
-            <p>
-                Tell us what kind of experience you would like
-                to have in Mozambique.
-            </p>
-        </section>
-
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header"><div class="header-inner">
+        <a class="brand" href="index.html" aria-label="MozHub home"><img src="images/mozhub-logo.png.png" alt="" width="140" height="140"><span>MozHub</span></a>
+        <button class="menu-button" id="menu-button" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation"><span aria-hidden="true">☰</span></button>
+        <nav id="main-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="services.html">Services</a><a class="active" aria-current="page" href="plan.html">Plan your service</a></nav>
+    </div></header>
+    <main id="main-content">
+        <section class="page-heading"><p class="eyebrow">Request planner</p><h1>Prepare your service inquiry</h1><p>Use this form to organize your needs. Your details stay in this browser and are not sent to a service provider.</p></section>
         <section class="form-section section">
-            <form id="travel-form">
-                <label for="visitor-name">
-                    Your name
-                </label>
-
-                <input
-                    type="text"
-                    id="visitor-name"
-                    name="visitor-name"
-                    required
-                    autocomplete="name">
-
-                <label for="region">
-                    Preferred region
-                </label>
-
-                <select id="region" name="region" required>
-                    <option value="">Select a region</option>
-                    <option value="north">North</option>
-                    <option value="center">Center</option>
-                    <option value="south">South</option>
-                </select>
-
-                <fieldset>
-                    <legend>What interests you?</legend>
-
-                    <label>
-                        <input
-                            type="radio"
-                            name="interest"
-                            value="beaches"
-                            required>
-                        Beaches
-                    </label>
-
-                    <label>
-                        <input
-                            type="radio"
-                            name="interest"
-                            value="culture">
-                        Culture
-                    </label>
-
-                    <label>
-                        <input
-                            type="radio"
-                            name="interest"
-                            value="nature">
-                        Nature
-                    </label>
-                </fieldset>
-
-                <button class="button" type="submit">
-                    Save My Preferences
-                </button>
+            <form id="request-form">
+                <label for="visitor-name">Your name</label><input type="text" id="visitor-name" name="visitor-name" autocomplete="name" maxlength="60" required>
+                <label for="service-type">Service you need</label><select id="service-type" name="service-type" required><option value="">Choose a service</option><option value="Electrician">Electrician</option><option value="Plumber">Plumber</option><option value="Mechanic">Mechanic</option><option value="Private tutor">Private tutor</option><option value="Photographer">Photographer</option><option value="Cleaner">Cleaner</option></select>
+                <label for="location">City or area</label><input type="text" id="location" name="location" autocomplete="address-level2" maxlength="80" placeholder="For example, Maputo" required>
+                <label for="job-details">What do you need help with?</label><textarea id="job-details" name="job-details" rows="5" maxlength="500" required></textarea>
+                <button class="button" type="submit">Save my inquiry notes</button>
             </form>
-
-            <div id="saved-preference" class="saved-preference">
-                <h2>Your saved preference</h2>
-
-                <p>
-                    Your travel preference will appear here.
-                </p>
-            </div>
+            <section id="saved-request" class="saved-preference" aria-live="polite" aria-label="Saved inquiry notes"><h2>Your inquiry notes</h2><p>No notes saved yet. Complete the form to create a local reminder.</p></section>
+            <button id="clear-request" class="text-button" type="button" hidden>Clear saved notes</button>
         </section>
     </main>
-
-    <footer>
-        <p>
-            &copy; 2026 Explore Mozambique | Alcidio Massanganhe
-        </p>
-
-        <a href="references.html">References</a>
-    </footer>
+    <footer class="site-footer"><p>© 2026 MozHub | Professional services in Mozambique</p><a href="references.html">References</a></footer>
 </body>
 </html>
-```

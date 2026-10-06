@@ -1,245 +1,129 @@
-```javascript
-// ------------------------------------
-// MOBILE NAVIGATION
-// ------------------------------------
+const services = [
+    { name: "Electrician", category: "home", summary: "Electrical installation, fault finding, lighting, and routine safety checks.", prepare: "Describe the issue, when it began, and whether power has been isolated safely." },
+    { name: "Plumber", category: "home", summary: "Water supply, drainage, leak repairs, taps, and bathroom fittings.", prepare: "Share the location of the issue and, if possible, a photo of the affected area." },
+    { name: "Cleaner", category: "home", summary: "Home and workspace cleaning, deep cleaning, and move-in preparation.", prepare: "Give the approximate size of the space and the tasks you want included." },
+    { name: "Mechanic", category: "transport", summary: "Vehicle inspection, maintenance, diagnostics, and repair advice.", prepare: "Note the vehicle make, model, year, symptoms, and warning lights." },
+    { name: "Private tutor", category: "learning", summary: "One-to-one learning support, subject practice, and exam preparation.", prepare: "Name the subject, learner level, learning goals, and preferred schedule." },
+    { name: "Photographer", category: "creative", summary: "Portraits, family events, celebrations, and small-business photography.", prepare: "Share the event date, location, coverage needs, and how you plan to use the images." }
+];
+
+function renderServices(list, target, message) {
+    if (!target) return;
+    target.replaceChildren();
+    if (message) message.textContent = list.length === 0 ? `No service categories match this filter.` : `${list.length} service ${list.length === 1 ? `category` : `categories`} shown.`;
+    list.forEach((service) => {
+        const card = document.createElement("article");
+        card.className = "service-card";
+        const label = document.createElement("p");
+        label.className = "card-label";
+        label.textContent = service.category === `home` ? `Home and repairs` : service.category === `transport` ? `Transport` : service.category === `learning` ? `Learning` : `Creative and events`;
+        const title = document.createElement("h2");
+        title.textContent = service.name;
+        const summary = document.createElement("p");
+        summary.textContent = service.summary;
+        const prepTitle = document.createElement("h3");
+        prepTitle.textContent = `What to prepare`;
+        const prep = document.createElement("p");
+        prep.textContent = service.prepare;
+        card.append(label, title, summary, prepTitle, prep);
+        target.append(card);
+    });
+}
+
+const featuredTarget = document.querySelector("#featured-services");
+if (featuredTarget) renderServices(services.slice(0, 3), featuredTarget);
+
+const serviceFilter = document.querySelector("#service-filter");
+if (serviceFilter) {
+    const serviceTarget = document.querySelector("#service-list");
+    const serviceMessage = document.querySelector("#service-message");
+    const applyFilter = () => {
+        const matches = serviceFilter.value === "all" ? services : services.filter((service) => service.category === serviceFilter.value);
+        renderServices(matches, serviceTarget, serviceMessage);
+    };
+    serviceFilter.addEventListener("change", applyFilter);
+    applyFilter();
+}
 
 const menuButton = document.querySelector("#menu-button");
 const mainNav = document.querySelector("#main-nav");
-
 if (menuButton && mainNav) {
     menuButton.addEventListener("click", () => {
-        mainNav.classList.toggle("open");
+        const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+        menuButton.setAttribute("aria-expanded", String(!isOpen));
+        menuButton.setAttribute("aria-label", isOpen ? `Open navigation` : `Close navigation`);
+        mainNav.classList.toggle("open", !isOpen);
     });
 }
 
+const requestForm = document.querySelector("#request-form");
+const savedRequest = document.querySelector("#saved-request");
+const clearRequestButton = document.querySelector("#clear-request");
+const storageKey = `mozhub-request-notes`;
 
-// ------------------------------------
-// DESTINATION DATA
-// ------------------------------------
-
-const destinations = [
-    {
-        name: "Maputo",
-        region: "south",
-        description: "A lively capital city with culture, food, and history.",
-        image: "images/maputo.jpg"
-    },
-
-    {
-        name: "Tofo",
-        region: "south",
-        description: "A coastal destination known for beaches and ocean experiences.",
-        image: "images/tofo.jpg"
-    },
-
-    {
-        name: "Vilankulo",
-        region: "center",
-        description: "A beautiful coastal town near the Bazaruto Archipelago.",
-        image: "images/vilankulo.jpg"
-    },
-
-    {
-        name: "Gorongosa",
-        region: "center",
-        description: "A natural destination famous for wildlife and conservation.",
-        image: "images/gorongosa.jpg"
-    },
-
-    {
-        name: "Ilha de Moçambique",
-        region: "north",
-        description: "A historic island with important cultural heritage.",
-        image: "images/ilha-mocambique.jpg"
-    }
-];
-
-
-// ------------------------------------
-// DISPLAY DESTINATIONS
-// ------------------------------------
-
-function displayDestinations(list) {
-
-    const destinationList =
-        document.querySelector("#destination-list");
-
-    const message =
-        document.querySelector("#destination-message");
-
-    if (!destinationList) {
-        return;
-    }
-
-    destinationList.innerHTML = "";
-
-    if (list.length === 0) {
-
-        message.textContent =
-            "No destinations were found for this region.";
-
-        return;
-    }
-
-    message.textContent =
-        `${list.length} destination(s) found.`;
-
-    list.forEach((destination) => {
-
-        const card = document.createElement("article");
-
-        card.classList.add("card", "destination-card");
-
-        card.innerHTML = `
-            <img
-                src="${destination.image}"
-                alt="${destination.name}"
-                loading="lazy"
-                width="800"
-                height="533">
-
-            <h2>${destination.name}</h2>
-
-            <p>${destination.description}</p>
-
-            <p>
-                <strong>Region:</strong>
-                ${destination.region}
-            </p>
-        `;
-
-        destinationList.appendChild(card);
+function showRequest(request) {
+    if (!savedRequest) return;
+    savedRequest.replaceChildren();
+    const heading = document.createElement("h2");
+        heading.textContent = `Inquiry notes for ${request.name}`;
+    savedRequest.append(heading);
+    const details = [
+        [`Service`, request.service],
+        [`Area`, request.location],
+        [`Your notes`, request.details]
+    ];
+    details.forEach(([label, value]) => {
+        const paragraph = document.createElement("p");
+        const strong = document.createElement("strong");
+        strong.textContent = `${label}: `;
+        paragraph.append(strong, document.createTextNode(value));
+        savedRequest.append(paragraph);
     });
+    if (clearRequestButton) clearRequestButton.hidden = false;
 }
 
-
-// ------------------------------------
-// FILTER DESTINATIONS
-// ------------------------------------
-
-function filterDestinations() {
-
-    const filter =
-        document.querySelector("#region-filter");
-
-    if (!filter) {
-        return;
-    }
-
-    const selectedRegion = filter.value;
-
-    if (selectedRegion === "all") {
-
-        displayDestinations(destinations);
-
-    } else {
-
-        const filteredDestinations =
-            destinations.filter(
-                (destination) =>
-                    destination.region === selectedRegion
-            );
-
-        displayDestinations(filteredDestinations);
-    }
-}
-
-
-const regionFilter =
-    document.querySelector("#region-filter");
-
-if (regionFilter) {
-
-    regionFilter.addEventListener(
-        "change",
-        filterDestinations
-    );
-
-    displayDestinations(destinations);
-}
-
-
-// ------------------------------------
-// TRAVEL FORM
-// ------------------------------------
-
-const travelForm =
-    document.querySelector("#travel-form");
-
-if (travelForm) {
-
-    travelForm.addEventListener("submit", (event) => {
-
+if (requestForm) {
+    requestForm.addEventListener("submit", (event) => {
         event.preventDefault();
-
-        const visitorName =
-            document.querySelector("#visitor-name").value;
-
-        const region =
-            document.querySelector("#region").value;
-
-        const interest =
-            document.querySelector(
-                'input[name="interest"]:checked'
-            ).value;
-
-        const preference = {
-            name: visitorName,
-            region: region,
-            interest: interest
+        if (!requestForm.reportValidity()) return;
+        const request = {
+            name: document.querySelector("#visitor-name").value.trim(),
+            service: document.querySelector("#service-type").value,
+            location: document.querySelector("#location").value.trim(),
+            details: document.querySelector("#job-details").value.trim()
         };
-
-        localStorage.setItem(
-            "travelPreference",
-            JSON.stringify(preference)
-        );
-
-        displaySavedPreference(preference);
+        try {
+            localStorage.setItem(storageKey, JSON.stringify(request));
+            showRequest(request);
+        } catch {
+            if (savedRequest) savedRequest.textContent = `Your browser could not save these notes. Please keep a copy before leaving this page.`;
+        }
     });
 }
 
+if (clearRequestButton) {
+    clearRequestButton.addEventListener("click", () => {
+        try { localStorage.removeItem(storageKey); } catch { /* Storage may be unavailable. */ }
+        clearRequestButton.hidden = true;
+        if (savedRequest) {
+            savedRequest.replaceChildren();
+            const heading = document.createElement(`h2`);
+            heading.textContent = `Your inquiry notes`;
+            const message = document.createElement(`p`);
+            message.textContent = `No notes saved yet. Complete the form to create a local reminder.`;
+            savedRequest.append(heading, message);
+        }
+    });
+}
 
-// ------------------------------------
-// DISPLAY SAVED PREFERENCE
-// ------------------------------------
-
-function displaySavedPreference(preference) {
-
-    const savedPreference =
-        document.querySelector("#saved-preference");
-
-    if (!savedPreference) {
-        return;
+if (savedRequest) {
+    try {
+        const stored = localStorage.getItem(storageKey);
+        if (stored) {
+            const request = JSON.parse(stored);
+            if (request && typeof request.name === "string" && typeof request.service === "string" && typeof request.location === "string" && typeof request.details === "string") showRequest(request);
+        }
+    } catch {
+        try { localStorage.removeItem(storageKey); } catch { /* Storage may be unavailable. */ }
     }
-
-    savedPreference.innerHTML = `
-        <h2>Welcome, ${preference.name}!</h2>
-
-        <p>
-            Your preferred region is
-            <strong>${preference.region}</strong>.
-        </p>
-
-        <p>
-            You are interested in
-            <strong>${preference.interest}</strong>.
-        </p>
-    `;
 }
-
-
-// ------------------------------------
-// LOAD LOCAL STORAGE
-// ------------------------------------
-
-const savedData =
-    localStorage.getItem("travelPreference");
-
-if (savedData) {
-
-    const savedPreference =
-        JSON.parse(savedData);
-
-    displaySavedPreference(savedPreference);
-}
-```

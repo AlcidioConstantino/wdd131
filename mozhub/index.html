@@ -1,120 +1,68 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-        content="Explore Mozambique and discover beautiful destinations, culture, and travel ideas.">
-
+    <meta name="description" content="Find practical information about professional services in Mozambique with MozHub.">
     <meta name="author" content="Alcidio Massanganhe">
-
-    <title>Explore Mozambique | Home</title>
-
+    <title>MozHub | Professional Services in Mozambique</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/site.css">
     <script src="scripts/site.js" defer></script>
 </head>
-
 <body>
-    <header>
-        <div class="header-container">
-            <a class="logo" href="index.html">Explore Mozambique</a>
-
-            <button id="menu-button" class="menu-button" aria-label="Open navigation">
-                ☰
-            </button>
-
-            <nav id="main-nav">
-                <a href="index.html" class="active">Home</a>
-                <a href="destinations.html">Destinations</a>
-                <a href="plan.html">Plan Your Visit</a>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="index.html" aria-label="MozHub home">
+                <img src="images/mozhub-logo.png.png" alt="" width="140" height="140">
+                <span>MozHub</span>
+            </a>
+            <button class="menu-button" id="menu-button" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation"><span aria-hidden="true">☰</span></button>
+            <nav id="main-nav" aria-label="Main navigation">
+                <a class="active" aria-current="page" href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="plan.html">Plan your service</a>
             </nav>
         </div>
     </header>
-
-    <main>
+    <main id="main-content">
         <section class="hero">
             <div class="hero-content">
-                <p class="eyebrow">Discover Africa</p>
-
-                <h1>Explore Mozambique</h1>
-
-                <p>
-                    Discover beautiful places, beaches, culture, and
-                    experiences across Mozambique.
-                </p>
-
-                <a class="button" href="destinations.html">
-                    Explore Destinations
-                </a>
+                <p class="eyebrow">Local knowledge. Practical help.</p>
+                <h1>Find the right professional service for your needs.</h1>
+                <p>MozHub helps people in Mozambique understand common services, what to ask for, and how to prepare before contacting a professional.</p>
+                <a class="button" href="services.html">Explore service guide</a>
             </div>
+            <div class="hero-mark" aria-hidden="true"><span>MOZ</span><strong>+</strong><span>HUB</span></div>
         </section>
-
-        <section class="intro section">
+        <section class="section" aria-labelledby="popular-heading">
+            <div class="section-heading">
+                <p class="eyebrow">Start here</p>
+                <h2 id="popular-heading">Services for everyday needs</h2>
+                <p>Browse clear overviews of skilled services and the details that help you make an informed request.</p>
+            </div>
+            <div class="card-grid" id="featured-services" aria-live="polite"></div>
+            <p class="center-link"><a class="text-link" href="services.html">See all service categories <span aria-hidden="true">→</span></a></p>
+        </section>
+        <section class="split-section">
             <div>
-                <p class="eyebrow">Welcome</p>
-
-                <h2>Discover the beauty of Mozambique</h2>
-
-                <p>
-                    Mozambique is a country with beautiful beaches,
-                    interesting cities, diverse cultures, and unique
-                    natural landscapes.
-                </p>
-
-                <p>
-                    This website introduces some destinations that
-                    visitors can explore and provides a simple way
-                    to plan a visit.
-                </p>
+                <p class="eyebrow">Make a clear request</p>
+                <h2>Know what to discuss before the first call.</h2>
+                <p>Describe the work, share your location, ask about the estimate and timing, and agree on the next step. A clear conversation helps both sides understand the job.</p>
+                <a class="button button-light" href="plan.html">Prepare your request</a>
             </div>
-
-            <img
-                src="images/mozambique-coast.jpg"
-                alt="Beautiful Mozambique coastline"
-                loading="lazy"
-                width="800"
-                height="533">
-        </section>
-
-        <section class="highlights section">
-            <p class="eyebrow">Why visit?</p>
-
-            <h2>Something for everyone</h2>
-
-            <div class="card-grid">
-                <article class="card">
-                    <h3>🏖 Beaches</h3>
-                    <p>
-                        Enjoy beautiful beaches and coastal landscapes.
-                    </p>
-                </article>
-
-                <article class="card">
-                    <h3>🌿 Nature</h3>
-                    <p>
-                        Discover natural areas and interesting wildlife.
-                    </p>
-                </article>
-
-                <article class="card">
-                    <h3>🏛 Culture</h3>
-                    <p>
-                        Learn about the history and cultures of Mozambique.
-                    </p>
-                </article>
-            </div>
+            <figure class="brand-figure">
+                <img src="images/mozhub-logo.png.png" alt="MozHub logo" width="500" height="500" loading="lazy">
+                <figcaption>A practical starting point for finding and discussing local services.</figcaption>
+            </figure>
         </section>
     </main>
-
-    <footer>
-        <p>
-            &copy; 2026 Explore Mozambique | Alcidio Massanganhe
-        </p>
-
+    <footer class="site-footer">
+        <p>© 2026 MozHub | Professional services in Mozambique</p>
         <a href="references.html">References</a>
     </footer>
 </body>
 </html>
-```
